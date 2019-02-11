@@ -1,0 +1,17 @@
+{
+  "name": "class1210",
+  "version": "1.0.0",
+  "description": "Corey: WARM UP! Create an express app that has the following routes. / Should say this is the home page. /pokemon - should give a list of all pokemon. /pokemon/:id should give a specific pokemon. Use pokemon and Ghibli api to help you make calls from your express backend. /movies gives a list of movies /movies/:id gives specific movie. separate your files.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.7"
+  }
+}

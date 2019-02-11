@@ -1,0 +1,27 @@
+DROP DATABASE IF EXISTS latergram;
+CREATE DATABASE latergram;
+
+\c latergram;
+
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS photos;
+DROP TABLE IF EXISTS comments;
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR NOT NULL,
+  email VARCHAR NOT NULL
+);
+
+CREATE TABLE photos (
+  id SERIAL PRIMARY KEY,
+  url VARCHAR NOT NULL,
+  user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE comments (
+  id SERIAL PRIMARY KEY,
+  body TEXT NOT NULL,
+  user_id INT REFERENCES users(id) ON DELETE CASCADE,
+  photo_id INT REFERENCES photos(id) ON DELETE CASCADE
+);
